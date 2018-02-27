@@ -17,4 +17,13 @@ public class StudentService {
     public List <Student> getAll() {
         return students;
     }
+
+    public String getStudentName(int studentId) {
+        for(int i = 0; i < students.size(); i++) {
+            if(students.get(i).getId() == studentId) {
+                return students.get(i).getName();
+            }
+        }
+        return "Student_not_found";
+    }
 }

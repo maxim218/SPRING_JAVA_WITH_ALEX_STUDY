@@ -30,4 +30,9 @@ public class StudentController {
         studentService.push(body);
         return ResponseEntity.ok(body);
     }
+
+    @GetMapping(path="/get_name", produces="application/json")
+    public ResponseEntity get_name(@RequestParam(value="studentnumber") int studentnumber) {
+        return ResponseEntity.ok(studentService.getStudentName(studentnumber));
+    }
 }
